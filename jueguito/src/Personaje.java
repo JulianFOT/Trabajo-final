@@ -7,8 +7,8 @@ public class Personaje {
    
 	int ancho = 50;
 	int alto = 50;
-	int x = 50;
-        int y = 200;
+	int x = 10;
+        int y = 350;
 	int x1 = 0;
         int y1=0;
 	private Juego jueguito;
@@ -26,11 +26,11 @@ public class Personaje {
                
                 if(saltando)
                 {
-                    if(y == 200)//el personaje esta en el suelo
+                    if(y == 350)//el personaje esta en el suelo
                         {sube=true;
                         y1=-5;
                         baja=false;}
-                    if(y == 90)//el personale llego al limite del salto
+                    if(y == 225)//el personale llego al limite del salto
                         {baja=true;
                         y1=5;
                         sube=false;
@@ -45,7 +45,7 @@ public class Personaje {
                         {
                             
                             y = y + y1;
-                            if(y == 200)
+                            if(y == 350)
                             {
                                 saltando=false;
                             }

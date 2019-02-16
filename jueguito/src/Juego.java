@@ -11,7 +11,7 @@ public class Juego extends JPanel{
     
     Personaje personaje1 = new Personaje(this);
     Obstaculo obstaculo1 = new Obstaculo(this);
-    Nube nubecita = new Nube(this);
+    Fondo nubecita = new Fondo(this);
     
     public boolean juegoFinalizado=false;
     public int puntos = 0;

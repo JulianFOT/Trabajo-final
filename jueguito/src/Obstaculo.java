@@ -6,7 +6,7 @@ public class Obstaculo {
         int ancho = 20;
 	int alto = 50;
 	int x = 700;
-	int y = 200;
+	int y = 350;
 	int x1 = -5;
 	
 	private Juego jueguito;

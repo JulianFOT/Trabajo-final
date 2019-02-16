@@ -9,9 +9,10 @@ public class Principal {
         JFrame ventana = new JFrame("Jueguito");
         Juego jueguito = new Juego();
         ventana.add(jueguito);
-	ventana.setSize(700,290);
-	ventana.setLocation(400, 200);
+	ventana.setSize(1300,425);
+	ventana.setLocation(70,200 );
         ventana.setVisible(true);
+        ventana.setResizable(false);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
         while (!jueguito.juegoFinalizado) {
