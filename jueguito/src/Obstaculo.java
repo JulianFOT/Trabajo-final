@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 public class Obstaculo {
         int ancho = 20;
 	int alto = 50;
-	int x = 700;
+	int x = 1300;
 	int y = 350;
 	int x1 = -5;
 	
@@ -20,7 +20,7 @@ public class Obstaculo {
             if (x<=-50)
                 {
                     jueguito.puntos++;
-                    x=700;
+                    x=1300;
                 }else
                     {
                         
