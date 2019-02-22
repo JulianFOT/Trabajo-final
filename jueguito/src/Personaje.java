@@ -1,7 +1,9 @@
 
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 
 public class Personaje {
    
@@ -15,7 +17,9 @@ public class Personaje {
         boolean saltando=false;
         boolean sube=false;
         boolean baja=false;
-
+        cargarImagen carga = new cargarImagen("C:\\Users\\Labing960Clon\\Downloads\\imageedit_1_2207419749.png");
+        Image imagen = carga.img;
+        
 	public Personaje(Juego jueguito) {
 		this.jueguito= jueguito;
 	}
@@ -54,7 +58,8 @@ public class Personaje {
         }
 
 	public void paint(Graphics2D g) {
-		g.fillRect(x, y, ancho, alto);
+            //Graphics2D g2d = new Graphics2D(Graphics g);
+            g.drawImage(imagen, x, y, jueguito);
         }
 
 	public void keyPressed(KeyEvent e) {
