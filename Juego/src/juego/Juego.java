@@ -55,6 +55,7 @@ import javax.swing.JPanel;
             g.drawString("sirva catrehijueputa malparido", 1352-1300, 548-500);
             g.drawImage(luz.getImage(), 100, 100, this);
             g.drawImage(efecto.getImage(), 0, 0, this);
+            g.drawString("Tengo un problema al cargar las imagenes, o no se mrk que gono", 1352-600, 548-500);
         }
 
     private void actulaizar() {
