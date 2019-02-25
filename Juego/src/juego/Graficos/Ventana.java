@@ -39,6 +39,7 @@ public class Ventana extends JFrame {
           *   Se crea y setea la ventana Principal
         */
         JFrame ventana = new JFrame("Jueguito");
+        
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(ancho, alto);
         ventana.setTitle("Jump Parcours");

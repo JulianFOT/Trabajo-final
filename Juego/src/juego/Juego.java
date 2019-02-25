@@ -18,6 +18,7 @@ package juego;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 import javax.swing.JPanel;
 
 /**
@@ -25,19 +26,24 @@ import javax.swing.JPanel;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero/JumpParcour>
  */
 
-    public class Juego extends JPanel {
-
+    public class Juego  extends JPanel {
+        
+        Image imagen;
+        
+            
         private Image FondoJuego;
         private final Fondo luz;
         private final Fondo efecto;
-        private final Fondo contruccion;
+        private final Fondo construccion;
         private final Fondo ciudad;
         
-        public Juego(){
-            luz = new Fondo("Graficos/Recursos/Fondo/1Fondo.png");
-            efecto = new Fondo("Graficos/Recursos/Fondo/2Fondo.png");
-            contruccion = new Fondo("Graficos/Recursos/Fondo/3Fondo.png");
-            ciudad = new Fondo("Graficos/Recursos/Fondo/4Fondo.png");
+        public  Juego(){
+           
+//            luz = new Fondo("Graficos/Recursos/Fondo/1Fondo.png");
+//            efecto = new Fondo("Graficos/Recursos/Fondo/2Fondo.png");
+//            construccion = new Fondo("Graficos/Recursos/Fondo/3Fondo.png");
+//            ciudad = new Fondo("Graficos/Recursos/Fondo/4Fondo.png");
+            
         }
         
         
@@ -51,11 +57,13 @@ import javax.swing.JPanel;
             ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
             ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
 */
-            g.drawOval(100, 100, 100, 100);
-            g.drawString("sirva catrehijueputa malparido", 1352-1300, 548-500);
-            g.drawImage(luz.getImage(), 100, 100, this);
-            g.drawImage(efecto.getImage(), 0, 0, this);
-            g.drawString("Tengo un problema al cargar las imagenes, o no se mrk que gono", 1352-600, 548-500);
+//            g.drawOval(100, 100, 100, 100);
+//            g.drawString("sirva catrehijueputa malparido", 1352-1300, 548-500);
+//            g.drawImage(luz.getImage(), luz.getAltura(), luz.getAnchura(), this);
+//            g.drawImage(efecto.getImage(),efecto.getAltura(), efecto.getAnchura(), this);
+//            g.drawImage(construccion.getImage(), construccion.getAltura(), construccion.getAnchura(), this);
+//            g.drawImage(ciudad.getImage(),ciudad.getAltura(), ciudad.getAnchura(), this);
+//            g.drawString("Tengo un problema al cargar las imagenes, o no se mrk que gono", 1352-600, 548-500);
         }
 
     private void actulaizar() {

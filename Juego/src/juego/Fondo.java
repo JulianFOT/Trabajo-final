@@ -16,38 +16,50 @@
 package juego;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+
 /**
  *
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero/JumpParcour>
  */
 public final class Fondo {
-    Image imagen ;
+   
+    
+    
+    Image[] image=new Image[4];
+    int i;
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
     Dimension tamañomantalla = miPantalla.getScreenSize();
     private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
     private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
     int x1=0, y1=0 ;
-    public Fondo(String ruta){
-        File f = new File(ruta) ;
-            System.out.println("Se cargo dorrectamente el fondo de la ruta: "+ruta);    
+    
+    
+    
+    public void Fondo(Image[] Image)
+    {
+        
+     for( i=0;i<4;i++)
+     {
+     Image[0]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo.png")).getImage();
+     Image[1]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//2Fondo.png")).getImage();
+     Image[2]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//3Fondo.png")).getImage();
+     Image[3]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//4Fondo.png")).getImage();
+     }
+     
     }
     
-    public Image getImage(){
-        return imagen ;
-    }
-    
-    public int getAltura(){
-        return alto;
-    }
-
-    public int getAnchura(){
-        return ancho;
-    }
-    
+    protected void paintComponent(Graphics g){
+        
+        g.drawImage(image[i], alto, ancho, this);
+    } 
 }
 
