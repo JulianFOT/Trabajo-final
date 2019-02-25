@@ -17,8 +17,11 @@
 package juego;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -28,22 +31,22 @@ import javax.swing.JPanel;
 
     public class Juego  extends JPanel {
         
-        Image imagen;
         
-            
-        private Image FondoJuego;
-        private final Fondo luz;
-        private final Fondo efecto;
-        private final Fondo construccion;
-        private final Fondo ciudad;
+        Image Imagen;
+          
         
-        public  Juego(){
+        @SuppressWarnings("empty-statement")
+        public  Juego()
+        {  
+            Image[] fondos= {new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo.png")).getImage(),
+            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//2Fondo.png")).getImage(),
+            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//3Fondo.png")).getImage(),
+            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//4Fondo.png")).getImage()
+       };
            
-//            luz = new Fondo("Graficos/Recursos/Fondo/1Fondo.png");
-//            efecto = new Fondo("Graficos/Recursos/Fondo/2Fondo.png");
-//            construccion = new Fondo("Graficos/Recursos/Fondo/3Fondo.png");
-//            ciudad = new Fondo("Graficos/Recursos/Fondo/4Fondo.png");
-            
+           
+    
+           
         }
         
         
@@ -51,19 +54,12 @@ import javax.swing.JPanel;
         @Override
         protected void paintComponent(Graphics g){
             super.paintComponent(g);
-/*          Graphics2D g2d = (Graphics2D) g;
-            ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
-            ImageIcon imagenFondo2 =new ImageIcon(getClass().getResource("/Imagenes/2Fondo.png"));
-            ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
-            ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
-*/
-//            g.drawOval(100, 100, 100, 100);
-//            g.drawString("sirva catrehijueputa malparido", 1352-1300, 548-500);
-//            g.drawImage(luz.getImage(), luz.getAltura(), luz.getAnchura(), this);
-//            g.drawImage(efecto.getImage(),efecto.getAltura(), efecto.getAnchura(), this);
-//            g.drawImage(construccion.getImage(), construccion.getAltura(), construccion.getAnchura(), this);
-//            g.drawImage(ciudad.getImage(),ciudad.getAltura(), ciudad.getAnchura(), this);
-//            g.drawString("Tengo un problema al cargar las imagenes, o no se mrk que gono", 1352-600, 548-500);
+          Graphics2D g2d = (Graphics2D) g;
+          
+          
+            g2d.drawImage(Fondo1.getImagen(), Fondo1.getAlto(), Fondo1.getAncho(), this);
+            g2d.drawImage(fondos[0], fondos[0], fondos[0].getAncho(), this);
+
         }
 
     private void actulaizar() {

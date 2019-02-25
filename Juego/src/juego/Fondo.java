@@ -34,32 +34,37 @@ public final class Fondo {
    
     
     
-    Image[] image=new Image[4];
+    Image Imagen;
     int i;
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    
     Dimension tamañomantalla = miPantalla.getScreenSize();
     private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
+    
     private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
     int x1=0, y1=0 ;
     
     
     
-    public void Fondo(Image[] Image)
+    public  Fondo(String ruta)
     {
-        
-     for( i=0;i<4;i++)
-     {
-     Image[0]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo.png")).getImage();
-     Image[1]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//2Fondo.png")).getImage();
-     Image[2]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//3Fondo.png")).getImage();
-     Image[3]=new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//4Fondo.png")).getImage();
-     }
-     
+    Imagen = new ImageIcon(getClass().getResource(ruta)).getImage();
+        System.out.println("carga exitosa");
     }
     
-    protected void paintComponent(Graphics g){
-        
-        g.drawImage(image[i], alto, ancho, this);
-    } 
+    public int getAlto() 
+    {
+        return alto;
+    }
+
+    public int getAncho() 
+    {
+        return ancho;
+    }
+
+    public Image getImagen() 
+    {
+        return Imagen;
+    }
 }
 
