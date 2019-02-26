@@ -54,6 +54,7 @@ public final class Fondo {
    
 //    Imagen = new ImageIcon(getClass().getResource(ruta)).getImage();
 //        System.out.println("carga exitosa");
+    
     public int getAlto() 
     {
         return alto;

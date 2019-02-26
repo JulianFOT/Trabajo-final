@@ -41,10 +41,26 @@ class georges extends Personaje{
     };
     
     public georges(){
-        numeroVidas = 3;
+        Saltos = 2;
         x = 40;
         y = 60;
     }
     
+    public void mover(){
+        
+        
+/*if (dx > 0 && x <= 1250) {
+            x += dx;
+        } else if (dx < 0 && x >= 10) {
+            x += dx;
+        }
+
+        if (dy > 0 && y <= 780) {
+            y += dy;
+        } else if (dy < 0 && y >= 10) {
+            y += dy;
+        }
+*/
+    }
     
 }

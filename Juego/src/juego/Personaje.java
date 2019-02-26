@@ -32,7 +32,7 @@ public class Personaje {
     String UbicacionImagen;
     Image Imagen;
     boolean saltando = false ;
-    int numeroVidas = 3;
+    int Saltos ;
 
     public void mover(){
         if (dx > 0 && x <= 1250) {
@@ -52,6 +52,9 @@ public class Personaje {
         if (ke.getKeyCode() == KeyEvent.VK_SPACE)
         {
             saltando=true;
+            if (dy){
+            
+            }
         }
     }
     
