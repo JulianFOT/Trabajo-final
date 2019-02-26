@@ -52,9 +52,7 @@ public class Personaje {
         if (ke.getKeyCode() == KeyEvent.VK_SPACE)
         {
             saltando=true;
-            if (dy){
-            
-            }
+          
         }
     }
     

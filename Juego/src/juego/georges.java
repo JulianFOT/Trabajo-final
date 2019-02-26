@@ -42,8 +42,8 @@ class georges extends Personaje{
     
     public georges(){
         Saltos = 2;
-        x = 40;
-        y = 60;
+        x = 10;
+        y = 350;
     }
     
     public void mover(){

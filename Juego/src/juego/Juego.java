@@ -67,12 +67,13 @@ public class Juego extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
 
         g.drawImage(imagen, 0, 0, this);
-        g.drawImage(imagen3, 0, 0, this);
-        g.drawImage(imagen4, 0, 0, this);
         for (int i = 0; i < 4; i++) {
-            g.drawImage(imagen2, (ancho/4) * i + 20, alto/4+20, this);
+            g.drawImage(imagen2, (ancho/4+10) * i + 20, alto/2+20, this);
 
         }
+        g.drawImage(imagen3, 0, 0, this);
+        g.drawImage(imagen4, 0, 0, this);
+  
 
     }
 
