@@ -16,6 +16,7 @@
  */
 package Principal;
 
+import java.io.IOException;
 import juego.Graficos.Ventana;
 
 /**
@@ -23,7 +24,7 @@ import juego.Graficos.Ventana;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero>
  */
 public class Principal {
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException {
         Ventana ventana = new Ventana();
         
         }

@@ -20,6 +20,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -37,14 +38,12 @@ import javax.swing.JPanel;
         
         
        
-        public  Juego()
+        public  Juego() throws IOException
         {
-         Fondo=new Fondo();
-        try {
-            Fondo.Imagen = ImageIO.read(getClass().getResource("../Recursos/boton.png"));
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
+        
+        Fondo=new Fondo();
+        
+            Imagen= ImageIO.read(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo."));
         
         }
         
@@ -60,7 +59,7 @@ import javax.swing.JPanel;
 
         }
 
-    private void actulaizar() {
+    private void actulizar() {
         
         
     }

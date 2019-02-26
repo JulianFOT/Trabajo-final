@@ -19,6 +19,7 @@ package juego.Graficos;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
 import javax.swing.JFrame;
 import juego.Juego;
 
@@ -30,10 +31,10 @@ public class Ventana extends JFrame {
     
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
     Dimension tamañomantalla = miPantalla.getScreenSize();
-    private final int alto = (int) (int) tamañomantalla.getHeight();
-    private final int ancho = (int) ((int) tamañomantalla.getWidth());
+    private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
+    private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
 
-    public Ventana(){
+    public Ventana() throws IOException{
         
         /*
           *   Se crea y setea la ventana Principal

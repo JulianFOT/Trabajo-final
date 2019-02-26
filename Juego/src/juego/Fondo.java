@@ -35,10 +35,13 @@ public final class Fondo {
     
     
     Image Imagen;
+    String ruta;
     int i;
+    
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
     
     Dimension tamañomantalla = miPantalla.getScreenSize();
+    
     private final int alto = (int) (int) tamañomantalla.getHeight();
     
     private final int ancho = (int) (int) tamañomantalla.getWidth();
@@ -46,11 +49,19 @@ public final class Fondo {
     
     
     
+    
+   
+    
     public  Fondo()
     {
-        
-     Imagen= new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo.png")).getImage();
+    try {
+           Imagen = ImageIO.read(getClass().getResource(""));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
+
+   
 //    Imagen = new ImageIcon(getClass().getResource(ruta)).getImage();
 //        System.out.println("carga exitosa");
     public int getAlto() 
