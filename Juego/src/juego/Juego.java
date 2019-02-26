@@ -33,20 +33,19 @@ import javax.swing.JPanel;
         
         
         Image Imagen;
-          
+        private final Fondo Fondo;
         
-        @SuppressWarnings("empty-statement")
+        
+       
         public  Juego()
-        {  
-            Image[] fondos= {new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo.png")).getImage(),
-            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//2Fondo.png")).getImage(),
-            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//3Fondo.png")).getImage(),
-            new ImageIcon(getClass().getResource("juego.Graficos.Recursos.Fondo//4Fondo.png")).getImage()
-       };
-           
-           
-    
-           
+        {
+         Fondo=new Fondo();
+        try {
+            Fondo.Imagen = ImageIO.read(getClass().getResource("../Recursos/boton.png"));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        
         }
         
         
@@ -56,13 +55,13 @@ import javax.swing.JPanel;
             super.paintComponent(g);
           Graphics2D g2d = (Graphics2D) g;
           
-          
-            g2d.drawImage(Fondo1.getImagen(), Fondo1.getAlto(), Fondo1.getAncho(), this);
-            g2d.drawImage(fondos[0], fondos[0], fondos[0].getAncho(), this);
+         g.drawImage(Fondo.getImagen(),Fondo.getAlto(),Fondo.getAncho(), this);
+           
 
         }
 
     private void actulaizar() {
+        
         
     }
          

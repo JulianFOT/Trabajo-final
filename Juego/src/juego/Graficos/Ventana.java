@@ -30,8 +30,8 @@ public class Ventana extends JFrame {
     
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
     Dimension tamañomantalla = miPantalla.getScreenSize();
-    private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
-    private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
+    private final int alto = (int) (int) tamañomantalla.getHeight();
+    private final int ancho = (int) ((int) tamañomantalla.getWidth());
 
     public Ventana(){
         
