@@ -16,9 +16,11 @@
  */
 package juego;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -27,42 +29,57 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero/JumpParcour>
+ * @author Kevin Andres Forero Guaitero
+ * <https://github.com/kevinandresforero/JumpParcour>
  */
+public class Juego extends JPanel {
 
-    public class Juego  extends JPanel {
-        
-        
-        Image Imagen;
-        private final Fondo Fondo;
-        
-        
-       
-        public  Juego() throws IOException
-        {
-        
-        Fondo=new Fondo();
-        
-            Imagen= ImageIO.read(getClass().getResource("juego.Graficos.Recursos.Fondo//1Fondo."));
-        
-        }
-        
-        
-        
-        @Override
-        protected void paintComponent(Graphics g){
-            super.paintComponent(g);
-          Graphics2D g2d = (Graphics2D) g;
-          
-         g.drawImage(Fondo.getImagen(),Fondo.getAlto(),Fondo.getAncho(), this);
-           
+    private final Fondo Fondo;
+    private Image imagen;
+    private Image imagen2;
+    private Image imagen3;
+    private Image imagen4;
+    private Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    private Dimension tamañomantalla = miPantalla.getScreenSize();
+    private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
+    private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
+    
+    
+    public Juego() throws IOException {
+
+        Fondo = new Fondo();
+
+        imagen = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/1Fondo.png")).getImage();
+        imagen = imagen.getScaledInstance(ancho, alto, FRAMEBITS);
+
+        imagen2 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/2Fondo.png")).getImage();
+        imagen2 = imagen2.getScaledInstance(alto/2, (alto/3)*2, FRAMEBITS);
+
+        imagen3 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/3Fondo.png")).getImage();
+        imagen3 = imagen3.getScaledInstance(ancho, alto, FRAMEBITS);
+
+        imagen4 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/4Fondo.png")).getImage();
+        imagen4 = imagen4.getScaledInstance(ancho, alto, FRAMEBITS);
+
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+
+        g.drawImage(imagen, 0, 0, this);
+        g.drawImage(imagen3, 0, 0, this);
+        g.drawImage(imagen4, 0, 0, this);
+        for (int i = 0; i < 4; i++) {
+            g.drawImage(imagen2, (ancho/4) * i + 20, alto/4+20, this);
 
         }
+
+    }
 
     private void actulizar() {
-        
-        
+
     }
-         
- }
-        
+
+}
