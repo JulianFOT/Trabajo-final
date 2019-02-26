@@ -21,9 +21,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -49,14 +47,14 @@ public class Juego extends JPanel {
 
         Fondo = new Fondo();
 
+        imagen2 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/2Fondo.png")).getImage();
+        imagen2 = imagen2.getScaledInstance(alto/2, (alto/3)*2, FRAMEBITS); 
+        
         imagen = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/1Fondo.png")).getImage();
         imagen = imagen.getScaledInstance(ancho, alto, FRAMEBITS);
 
-        imagen2 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/2Fondo.png")).getImage();
-        imagen2 = imagen2.getScaledInstance(alto/2, (alto/3)*2, FRAMEBITS);
-
         imagen3 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/3Fondo.png")).getImage();
-        imagen3 = imagen3.getScaledInstance(ancho, alto, FRAMEBITS);
+        imagen3 = imagen3.getScaledInstance(ancho, alto/1, FRAMEBITS);
 
         imagen4 = new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Fondo/4Fondo.png")).getImage();
         imagen4 = imagen4.getScaledInstance(ancho, alto, FRAMEBITS);
@@ -79,7 +77,7 @@ public class Juego extends JPanel {
     }
 
     private void actulizar() {
-
+           
     }
 
 }

@@ -27,20 +27,20 @@ class georges extends Personaje{
     
     int contador = 0 ;
     Image[] Correr = {
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k2.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k3.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k4.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k5.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k6.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k7.png")).getImage(),
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k8.png")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/Correr/1.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/2.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/3.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/4.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/5.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/6.gif")).getImage(),
     };
     
     Image[] salto ={
-        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k1.png")).getImage()
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/saltar/salto1.gif")).getImage(),
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/saltar/salto2.gif")).getImage(),
     };
     
-    public georges(){   
+    public georges(){
         numeroVidas = 3;
         x = 40;
         y = 60;

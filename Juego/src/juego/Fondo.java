@@ -16,15 +16,9 @@
 package juego;
 
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -47,10 +41,6 @@ public final class Fondo {
     private final int ancho = (int) (int) tamañomantalla.getWidth();
     int x1=0, y1=0 ;
     
-    
-    
-    
-   
     
     public  Fondo()
     {
