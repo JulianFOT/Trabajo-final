@@ -3,7 +3,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
 
 public class Personaje {
    
@@ -17,8 +16,12 @@ public class Personaje {
         boolean saltando=false;
         boolean sube=false;
         boolean baja=false;
-        cargarImagen carga = new cargarImagen("C:\\Users\\Labing960Clon\\Downloads\\imageedit_1_2207419749.png");
-        Image imagen = carga.img;
+        cargarImagen carga1 = new cargarImagen("src/Personaje/1.gif");
+        cargarImagen carga2 = new cargarImagen("src/Personaje/2.gif");
+        cargarImagen carga3 = new cargarImagen("src/Personaje/3.gif");
+        cargarImagen carga4 = new cargarImagen("src/Personaje/4.gif");
+        Image imagen1 = carga1.img;
+        Image imagen2 = carga2.img;
         
 	public Personaje(Juego jueguito) {
 		this.jueguito= jueguito;
@@ -59,7 +62,15 @@ public class Personaje {
 
 	public void paint(Graphics2D g) {
             //Graphics2D g2d = new Graphics2D(Graphics g);
-            g.drawImage(imagen, x, y, jueguito);
+            int cont = 0 ;
+            
+            g.drawImage(imagen1, x, y, jueguito);
+            System.out.println(y+" , "+x+" cont "+cont);
+            if (cont>4){
+                cont=0;
+            }else{
+                cont++;
+            }
         }
 
 	public void keyPressed(KeyEvent e) {
