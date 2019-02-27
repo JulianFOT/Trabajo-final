@@ -64,7 +64,8 @@ public class Personaje {
             //Graphics2D g2d = new Graphics2D(Graphics g);
             int cont = 0 ;
             
-            g.drawImage(imagen1, x, y, jueguito);
+            //  g.drawImage(imagen1, x, y, jueguito);
+            g.drawImage(imagen1, x-20, y-40, ancho+60, alto+40, jueguito);
             System.out.println(y+" , "+x+" cont "+cont);
             if (cont>4){
                 cont=0;
