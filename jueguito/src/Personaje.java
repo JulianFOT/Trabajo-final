@@ -12,6 +12,7 @@ public class Personaje {
         int y = 350;
 	int x1 = 0;
         int y1=0;
+        int cont = 0 ;
 	private Juego jueguito;
         boolean saltando=false;
         boolean sube=false;
@@ -20,6 +21,8 @@ public class Personaje {
         cargarImagen carga2 = new cargarImagen("src/Personaje/2.gif");
         cargarImagen carga3 = new cargarImagen("src/Personaje/3.gif");
         cargarImagen carga4 = new cargarImagen("src/Personaje/4.gif");
+        cargarImagen carga5 = new cargarImagen("src/Personaje/salto1.gif");
+        cargarImagen carga6 = new cargarImagen("src/Personaje/salto2.gif");
         Image imagen1 = carga1.img;
         Image imagen2 = carga2.img;
         
@@ -61,17 +64,38 @@ public class Personaje {
         }
 
 	public void paint(Graphics2D g) {
-            //Graphics2D g2d = new Graphics2D(Graphics g);
-            int cont = 0 ;
             
+            //Graphics2D g2d = new Graphics2D(Graphics g);
             //  g.drawImage(imagen1, x, y, jueguito);
-            g.drawImage(imagen1, x-20, y-40, ancho+60, alto+40, jueguito);
-            System.out.println(y+" , "+x+" cont "+cont);
-            if (cont>4){
-                cont=0;
+            cont++;
+            Image imagen;
+            if(cont/5==1 && saltando!=true){
+                imagen = carga1.img ;
             }else{
-                cont++;
+                if(cont/5==2 && saltando!=true){
+                    imagen= carga2.img ;
+                }else{
+                    if(cont/5==3 && saltando!=true){
+                        imagen = carga3.img ;
+                    }else{
+                        if(cont/5==4 && saltando!=true) 
+                        {   imagen = carga4.img ;
+                        }
+                        if (cont>=20){
+                            cont=1;
+                        }
+                        if (y >= 330){
+                            imagen = carga5.img ;
+                        }else{
+                            imagen = carga6.img ;
+                        }
+                    }
+                    
+                }
             }
+            
+            g.drawImage(imagen, x-20, y-40, ancho+60, alto+40, jueguito);
+            
         }
 
 	public void keyPressed(KeyEvent e) {
@@ -83,6 +107,6 @@ public class Personaje {
 	}
         
 	public Rectangle getBounds() {
-		return new Rectangle(x+5, y+y1, ancho, alto);
+		return new Rectangle(x, y-20, ancho+13, alto+13);
 	}
 }
