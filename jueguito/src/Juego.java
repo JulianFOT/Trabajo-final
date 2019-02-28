@@ -3,8 +3,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Juego extends JPanel{
@@ -14,31 +21,49 @@ public class Juego extends JPanel{
     Fondo nubecita = new Fondo(this);
     
     public boolean juegoFinalizado=false;
+     public JButton boton;
+      private TAdapter tadapter;
     public int puntos = 0;
     
     public Juego() {
-        addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-            }
-            
-            @Override
-            public void keyReleased(KeyEvent e) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                personaje1.keyPressed(e);
-            }
-		});
+        tadapter = new TAdapter();
+        boton = new JButton();
         setFocusable(true);
+        setDoubleBuffered(true);
+        this.addKeyListener(tadapter);
+        
+        
+        try {
+            Image img = ImageIO.read(getClass().getResource("../Fondo/Boton.png"));
+            boton.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+             System.out.println("no se imprimio ni mierda");
+        }
+        
+        boton.addActionListener(tadapter);
+        
+         if(juegoFinalizado){
+           remove(boton);
+       }
+       else
+       {
+             
+          
+            boton.setEnabled(true);
+            boton.setVisible(true);
+       }
+       
 	}
+    
+    
     
     
     void mover() {
         personaje1.mover();
         obstaculo1.mover();
         nubecita.mover();
+        
     }
     
 
@@ -48,8 +73,9 @@ public class Juego extends JPanel{
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setPaint(Color.WHITE);
-        dibujarPuntaje(g2);
+   
         dibujar(g2);
+       
     }
     
     public void dibujar(Graphics2D g) {
@@ -64,23 +90,40 @@ public class Juego extends JPanel{
         obstaculo1.paint(g);
         
         mover();
+       
     }
     
-    public void dibujarPuntaje(Graphics2D g) {
-        Graphics2D g1 = g, g2 = g;
-        Font score = new Font("Arial", Font.BOLD, 30);
-        g.setFont(score);
-        g.setColor(Color.MAGENTA);
-        g1.drawString("Puntaje:  "+puntos, 510, 30);
-        
-        if(juegoFinalizado)
-        {
-            g2.setColor(Color.red);
-            g2.drawString("¡¡¡ Haz Perdido !!!", ((float) getBounds().getCenterX() /2)+50 , 70);
-        }
+    public void actualizar() {
+      
     }
+    
+     private class TAdapter extends KeyAdapter implements ActionListener {
+       
+         @Override
+            public void keyTyped(KeyEvent e) {
+            }
+            
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                personaje1.keyPressed(e);
+            }
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+		
+    
+        
+     }
+     
+     
     
 	public void finJuego() {
-            juegoFinalizado=true;
+            juegoFinalizado=true; 
 	}
 }
