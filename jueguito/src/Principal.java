@@ -14,6 +14,7 @@ public class Principal {
 	ventana.setLocation(70,200 );
         ventana.setVisible(true);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setCursor(1);
         
 	
         while (!jueguito.juegoFinalizado) {  

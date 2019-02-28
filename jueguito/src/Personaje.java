@@ -70,24 +70,31 @@ public class Personaje {
             cont++;
             Image imagen;
             if(cont/5==1 && saltando!=true){
+                //  paso 1
                 imagen = carga1.img ;
             }else{
                 if(cont/5==2 && saltando!=true){
                     imagen= carga2.img ;
+                    //  paso 2
                 }else{
                     if(cont/5==3 && saltando!=true){
                         imagen = carga3.img ;
+                        //  paso 3
                     }else{
                         if(cont/5==4 && saltando!=true) 
                         {   imagen = carga4.img ;
+                        //  paso 4
                         }
                         if (cont>=20){
+                            //  regresar a paso 1
                             cont=1;
                         }
                         if (y >= 330){
                             imagen = carga5.img ;
+                            //  Inicio del salto
                         }else{
                             imagen = carga6.img ;
+                            //  mientras salta
                         }
                     }
                     
