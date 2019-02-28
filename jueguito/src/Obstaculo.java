@@ -1,6 +1,5 @@
 
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.Rectangle;
 
 public class Obstaculo {
@@ -11,8 +10,6 @@ public class Obstaculo {
 	int x1 = -5;
 	
 	private Juego jueguito;
-        cargarImagen carga1 = new cargarImagen("src/Obstaculo/1.png");
-        Image imagen1 = carga1.img;
 
 	public Obstaculo (Juego jueguito) {
 		this.jueguito= jueguito;
@@ -42,7 +39,7 @@ public class Obstaculo {
 
 	public void paint(Graphics2D g) {
               
-              g.drawImage(imagen1, x-20, y-40, ancho+60, alto+40, jueguito);
+            g.fillRect(x, y, ancho, alto);
         
 	}
 	
