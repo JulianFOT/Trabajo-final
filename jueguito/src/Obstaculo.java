@@ -2,16 +2,22 @@
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
+import javax.swing.Timer;
 
 public class Obstaculo {
+    
+    
         int ancho = 20;
 	int alto = 50;
 	int x = 1300;
 	int y = 350;
 	int x1 = -5;
-         int cont = 0 ;
-	
-	private Juego jueguito;
+        int cont = 0 ;
+	int random;
+        
+        
+	public Juego jueguito;
+        
         cargarImagen carga1 = new cargarImagen("src/Obstaculo/1.png");
         cargarImagen carga2 = new cargarImagen("src/Obstaculo/2.png");
         cargarImagen carga3 = new cargarImagen("src/Obstaculo/3.png");
@@ -24,15 +30,20 @@ public class Obstaculo {
         Image imagen1 = carga1.img;
 
 	public Obstaculo (Juego jueguito) {
-		this.jueguito= jueguito;
+            this.jueguito= jueguito;
 	}
 
 	void mover() {
+        
+        double random1=0;
+        while(random1<=500) {
+            random1=Math.random()*1000;
+        }
             
             if (x<=-50)
                 {
                     jueguito.puntos++;
-                    x=1300;
+                    x=(int)random1+1300;
                 }else
                     {
                         
@@ -44,6 +55,52 @@ public class Obstaculo {
                         }
                     }
         }
+        
+        void mover(int perico) {
+        
+        double random1=0;    
+        while(random1<=300) {
+            random1=Math.random()*1300;
+        }    
+            
+            if (x<=-50)
+                {
+                    jueguito.puntos++;
+                    x=perico+(int)random1;
+                }else
+                    {
+                        
+                        if (colision())
+                        {
+                            jueguito.finJuego();
+                        }else{
+                            x = x + x1;
+                        }
+                    }
+        }
+        
+        /* void mover(int perico, int x) {
+        
+        double random1=0;    
+        while(random1<=400 || random1+perico<1300) {
+            random1=Math.random()*1000;
+        }    
+            
+            if (x<=-50)
+                {
+                    jueguito.puntos++;
+                    x=1300+(int)random1;
+                }else
+                    {
+                        
+                        if (colision())
+                        {
+                            jueguito.finJuego();
+                        }else{
+                            x = x + x1;
+                        }
+                    }
+        } */
 
 	private boolean colision() {
 		return jueguito.personaje1.getBounds().intersects(getBounds());
@@ -51,6 +108,7 @@ public class Obstaculo {
 
 	public void paint(Graphics2D g) {
              cont++;
+             
             Image imagen;
             if(cont/7==1 )
             {
@@ -88,12 +146,13 @@ public class Obstaculo {
                     
                 }
             }
-              
               g.drawImage(imagen, x-20, y-40, ancho+60, alto+40, jueguito);
         
+              
 	}
 	
 	public Rectangle getBounds() {
 		return new Rectangle(x, y, ancho, alto);
         }
+        
 }

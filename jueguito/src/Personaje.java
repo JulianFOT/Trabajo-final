@@ -8,7 +8,7 @@ public class Personaje {
    
 	int ancho = 50;
 	int alto = 50;
-	int x = 10;
+	int x = 30;
         int y = 350;
 	int x1 = 0;
         int y1=0;
@@ -40,7 +40,7 @@ public class Personaje {
                         {sube=true;
                         y1=-5;
                         baja=false;}
-                    if(y == 225)//el personale llego al limite del salto
+                    if(y == 200)//el personale llego al limite del salto
                         {baja=true;
                         y1=5;
                         sube=false;

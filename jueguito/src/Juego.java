@@ -1,4 +1,4 @@
-
+                  
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -10,7 +10,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import javax.swing.ImageIcon;            
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -18,11 +18,16 @@ public class Juego extends JPanel{
     
     Personaje personaje1 = new Personaje(this);
     Obstaculo obstaculo1 = new Obstaculo(this);
+    Obstaculo obstaculo2 = new Obstaculo(this);
+    Obstaculo obstaculo3 = new Obstaculo(this);
+    
+    
+    
     Fondo nubecita = new Fondo(this);
     
     public boolean juegoFinalizado=false;
-     public JButton boton;
-      private TAdapter tadapter;
+    public JButton boton;
+    private TAdapter tadapter;
     public int puntos = 0;
     
     public Juego() {
@@ -33,12 +38,17 @@ public class Juego extends JPanel{
         this.addKeyListener(tadapter);
         
         
+        obstaculo1.x=1300;
+        obstaculo2.x=1600;
+        obstaculo3.x=2000;
+        
+        
         try {
             Image img = ImageIO.read(getClass().getResource("../Fondo/Boton.png"));
             boton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
-             System.out.println("no se imprimio ni mierda");
+            System.out.println("no se imprimio ni mierda");
         }
         
         boton.addActionListener(tadapter);
@@ -48,8 +58,6 @@ public class Juego extends JPanel{
        }
        else
        {
-             
-          
             boton.setEnabled(true);
             boton.setVisible(true);
        }
@@ -60,9 +68,14 @@ public class Juego extends JPanel{
     
     
     void mover() {
-        personaje1.mover();
-        obstaculo1.mover();
         nubecita.mover();
+        personaje1.mover();
+        
+        
+        //obstaculo1.mover();
+        obstaculo1.mover(obstaculo3.x);
+        obstaculo2.mover(obstaculo1.x);
+        obstaculo3.mover(obstaculo2.x);
         
     }
     
@@ -79,15 +92,18 @@ public class Juego extends JPanel{
     }
     
     public void dibujar(Graphics2D g) {
-        
+
         g.setColor(Color.BLUE);
         nubecita.paint(g); 
 
         g.setColor(Color.BLACK);
         personaje1.paint(g);
-
+        
+        
         g.setColor(Color.red);
         obstaculo1.paint(g);
+        obstaculo2.paint(g);
+        obstaculo3.paint(g);
         
         mover();
        
