@@ -1,4 +1,6 @@
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.ImageObserver;
@@ -59,6 +61,12 @@ public class Fondo {
                   ImageIcon imagenFondo5 =new ImageIcon(getClass().getResource("/Fondo/GameOver.png"));
                   g.drawImage(imagenFondo5.getImage(),450,150,null);
             }
+            
+             Graphics2D g1 = g, g2 = g;
+             Font score = new Font("Arial", Font.BOLD, 30);
+             g.setFont(score);
+             g.setColor(Color.RED);
+             g1.drawString("Puntaje:  "+jueguito.puntos,  550, 30);
         }
 	
 	
