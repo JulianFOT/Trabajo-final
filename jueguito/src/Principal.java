@@ -22,7 +22,7 @@ public class Principal {
          Reproductor r= new Reproductor();
          
         //
-        r.Reproducir("C:\\Users\\JulianFO\\Downloads\\awesomeness.wav");
+        r.Reproducir("src/Sonido/awesomeness.wav");
         JFrame ventana = new JFrame("Jueguito");
         ventana.setResizable(false);
         Juego jueguito = new Juego();
