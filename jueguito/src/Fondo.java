@@ -1,5 +1,7 @@
 
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
 import javax.swing.ImageIcon;
 
 public class Fondo {
@@ -14,6 +16,8 @@ public class Fondo {
         int y2 = 0;
         //objeto de la clase juego
         private Juego jueguito;
+         cargarImagen carga1 = new cargarImagen("src/Fondo/YouLose.png");
+    Image imagen1 = carga1.img;
 
 	public Fondo (Juego jueguito) {
 		this.jueguito= jueguito;
@@ -49,6 +53,12 @@ public class Fondo {
             g.drawImage(imagenFondo3.getImage(), x2, y2,ancho_fondo,alto_fondo,null);
             g.drawImage(imagenFondo4.getImage(), x1, y1,ancho_fondo,alto_fondo,null);
             g.drawImage(imagenFondo4.getImage(), x2, y2,ancho_fondo,alto_fondo,null);
+            
+            if(jueguito.juegoFinalizado)
+            {
+                  ImageIcon imagenFondo5 =new ImageIcon(getClass().getResource("/Fondo/GameOver.png"));
+                  g.drawImage(imagenFondo5.getImage(),450,150,null);
+            }
         }
 	
 	
