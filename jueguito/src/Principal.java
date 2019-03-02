@@ -1,11 +1,28 @@
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        
+       
+         Reproductor r= new Reproductor();
+         
         //
+        r.Reproducir("C:\\Users\\JulianFO\\Downloads\\awesomeness.wav");
         JFrame ventana = new JFrame("Jueguito");
         ventana.setResizable(false);
         Juego jueguito = new Juego();
